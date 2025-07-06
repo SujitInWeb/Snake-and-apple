@@ -6,13 +6,15 @@ const ResetBtn = document.querySelector('#Reset');
 ground.width = ground.clientWidth;
 ground.height = ground.clientHeight;
 
+
+
 const groundWidth = ground.width;
 const groundHeight = ground.height;
 
 const snakeColor= "lightgreen";
-const foodColor= "red";
+const foodColor = "red";
 
-const unitSize = 20;
+const unitSize = 15;
 
 let running = false;
 let xVelocity = unitSize;
@@ -32,12 +34,24 @@ window.addEventListener("keydown",changeDirection);
 ResetBtn.addEventListener("click",resetGame);
 
 gameStart();
-
+createFood();
+drawfood();
 function gameStart(){};
 function nextTick(){};
 function clearBoard(){};
-function createFood(){};
-function drawfood(){};
+function createFood(){
+    function randomFood(min , max){
+        const randNum = Math.round((Math.random() * (max-min) + min));
+        return randNum;
+    }
+    foodX= randomFood(0 , groundWidth - unitSize);
+    foodY= randomFood(0 , groundWidth - unitSize);
+    
+};
+function drawfood(){
+    ctx.fillStyle = foodColor;
+    ctx.fillRect(foodX, foodY, unitSize,unitSize);
+};
 function moveSnake(){};
 function drawSnake (){};
 function changeDirection(){};
