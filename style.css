@@ -28,7 +28,7 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 80%;
 }
 .ground{
     width: 90%;
@@ -68,7 +68,7 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 20%;
 }
 #pause{
     background-color: #29903B;
