@@ -53,6 +53,7 @@ function gameStart(){
     nextTick();
 };
 function nextTick(){
+//this function checks and calls all the block of function during the beginning 
     if(running){
         setTimeout(()=>{
             clearBoard();
@@ -91,6 +92,9 @@ function drawfood(){
     ctx.fillRect(foodX, foodY, unitSize,unitSize);
 };
 function moveSnake(){
+    //the movement of snake depends by adding the xvelocity value with x value of snake[0] 
+    // which means the head and the y value respectively
+    // snake[0].x means its accessing the value of the x from the array of snake same for y
     const head ={ x : snake[0].x + xVelocity, y: snake[0].y + yVelocity};
     snake.unshift(head);
     //if food is eaten
@@ -103,6 +107,7 @@ function moveSnake(){
         snake.pop();
     }
 };
+//drawing of sanke in the canvas 
 function drawSnake (){
     ctx.fillStyle= snakeColor;
     snake.forEach(snakePart =>{
@@ -110,6 +115,7 @@ function drawSnake (){
     })
 };
 function changeDirection(event){
+//specific arrow keys have specific codes which helps in detecting and changing the direction of the snake
     const keyPressed = event.keyCode;
     const LEFT = 37 ;
     const RIGHT = 39 ;
@@ -120,7 +126,8 @@ function changeDirection(event){
     const goingDown =(yVelocity ==  unitSize);
     const goingRight =(xVelocity ==  unitSize);
     const goingLeft =(xVelocity == -unitSize);
-
+//here the switch statement helps in changing the diretion of the snake
+//this means the change of xVelocity and yVelocity.
     switch(true){
         case(keyPressed == LEFT && !goingRight ):
             xVelocity= -unitSize;
@@ -141,6 +148,7 @@ function changeDirection(event){
     }
 };
 function checkGameover(){
+//this switch cse checks whether the snake leaves the canvas or not
     switch(true){
         case(snake[0].x < 0):
             running =false;
@@ -155,6 +163,7 @@ function checkGameover(){
             running= false;
             break;
     }
+    //this for loop checks wheather the snake bites itself or not
     for(let i = 1 ; i < snake.length ; i +=1){
         if(snake[i].x == snake[0].x && snake[i].y == snake[0].y){
             running = false;
@@ -162,6 +171,7 @@ function checkGameover(){
     }
 };
 function displayGameOver(){
+//displays gameover and contains styling....
     ctx.font = "50px MV boli";
     ctx.fillStyle="White";
     ctx.textAlign="center";
@@ -169,6 +179,7 @@ function displayGameOver(){
     running=false;
 };
 function resetGame(){
+//resets the game to its initial stage, check above the values are same
     score=0;
     xVelocity = unitSize;
     yVelocity = 0;
@@ -181,7 +192,3 @@ function resetGame(){
     ];
     gameStart();
 };
-
-
-
-
