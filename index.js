@@ -18,6 +18,7 @@ const groundHeight = ground.height;
 const snakeColor= "lightgreen";
 const foodColor = "red";
 const boardBackground = "#151B23"; 
+let paused = false;
 
 
 //setting the unit size of the snake and apple
