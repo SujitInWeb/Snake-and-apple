@@ -3,6 +3,7 @@ const ground = document.querySelector('.ground');
 const ctx = ground.getContext('2d');
 const scorecard = document.querySelector('.score');
 const ResetBtn = document.querySelector('#Reset');
+const pauseBtn = document.querySelector('#pause');
 
 
 //here clientWidth means that to get the height and width of the canvas from css styling
