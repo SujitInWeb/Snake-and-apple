@@ -42,6 +42,7 @@ let snake = [
     {x:0, y :0}
 ]
 
+//eventlistener checks for changes made by the user and triggers the function accordingly
 window.addEventListener("keydown",changeDirection);
 ResetBtn.addEventListener("click",resetGame);
 pauseBtn.addEventListener("click", function(){
@@ -201,7 +202,7 @@ function displayGameOver(){
     running=false;
 };
 function resetGame(){
-//resets the game to its initial stage, check above the values are same
+//resets the game to its initial stage, check above ,the values are same
     paused = false;
     score=0;
     xVelocity = unitSize;
