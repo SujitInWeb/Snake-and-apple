@@ -18,12 +18,12 @@ const groundHeight = ground.height;
 const snakeColor= "lightgreen";
 const foodColor = "red";
 const boardBackground = "#151B23"; 
-let paused = false;
 
 
 //setting the unit size of the snake and apple
 const unitSize = 10;
 
+let paused = false;
 let running = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
@@ -44,6 +44,9 @@ let snake = [
 
 window.addEventListener("keydown",changeDirection);
 ResetBtn.addEventListener("click",resetGame);
+pauseBtn.addEventListener("click", function(){
+    paused = !paused;
+})
 
 gameStart();
 
@@ -56,7 +59,7 @@ function gameStart(){
 };
 function nextTick(){
 //this function checks and calls all the block of function during the beginning 
-    if(running){
+    if(running && !paused){
         setTimeout(()=>{
             clearBoard();
             drawfood();
@@ -66,6 +69,10 @@ function nextTick(){
             nextTick();
         },75);
     }
+    else if(paused){
+        setTimeout(nextTick , 75);
+        displayPauseMessage();
+    }
     else{
         displayGameOver();
     }
@@ -74,6 +81,18 @@ function clearBoard(){
     ctx.fillStyle = boardBackground;
     ctx.fillRect(0,0 , groundWidth,groundHeight);
 };
+
+function displayPauseMessage(){
+    clearBoard();
+    drawfood();
+    drawSnake();
+
+    ctx.font="30px MV boli";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("PAUSED" , groundWidth /2, groundHeight/2 - 30);
+
+}
 
 function createFood(){
     function randomFood(min , max){
@@ -150,7 +169,7 @@ function changeDirection(event){
     }
 };
 function checkGameover(){
-//this switch cse checks whether the snake leaves the canvas or not
+//this switch case checks whether the snake leaves the canvas or not
     switch(true){
         case(snake[0].x < 0):
             running =false;
@@ -182,6 +201,7 @@ function displayGameOver(){
 };
 function resetGame(){
 //resets the game to its initial stage, check above the values are same
+    paused = false;
     score=0;
     xVelocity = unitSize;
     yVelocity = 0;
