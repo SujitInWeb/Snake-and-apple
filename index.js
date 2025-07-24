@@ -82,6 +82,7 @@ function clearBoard(){
     ctx.fillRect(0,0 , groundWidth,groundHeight);
 };
 
+//this function displayes the pause so basicaly styling the text
 function displayPauseMessage(){
     clearBoard();
     drawfood();
@@ -93,7 +94,7 @@ function displayPauseMessage(){
     ctx.fillText("PAUSED" , groundWidth /2, groundHeight/2 - 30);
 
 }
-
+//generates random co-ordinates within the canvas in order to display the apple
 function createFood(){
     function randomFood(min , max){
         const randNum = Math.round((Math.random() * (max-min) + min) / unitSize) * unitSize;
