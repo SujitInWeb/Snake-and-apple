@@ -149,6 +149,7 @@ function changeDirection(event){
     const goingDown =(yVelocity ==  unitSize);
     const goingRight =(xVelocity ==  unitSize);
     const goingLeft =(xVelocity == -unitSize);
+    
 //here the switch statement helps in changing the diretion of the snake
 //this means the change of xVelocity and yVelocity.
     switch(true){
