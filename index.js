@@ -53,9 +53,11 @@ gameStart();
 
 function gameStart(){
     running=true;
+    paused= false;
     scorecard.textContent = score;
     createFood();
     drawfood();
+    updatePauseBtn();
     nextTick();
 };
 function nextTick(){
@@ -73,6 +75,7 @@ function nextTick(){
     else if(paused){
         setTimeout(nextTick , 75);
         displayPauseMessage();
+        updatePauseBtn();
     }
     else{
         displayGameOver();
@@ -94,7 +97,18 @@ function displayPauseMessage(){
     ctx.textAlign = "center";
     ctx.fillText("PAUSED" , groundWidth /2, groundHeight/2 - 30);
 
+    ctx.font = "16px MV boli";
+    ctx.fillText("Click pause button to resume" , groundWidth /2, groundHeight/2 + 10);
+
 }
+function updatePauseBtn(){
+    if(paused){
+        pauseBtn.textContent ="▶";
+    } else{
+        pauseBtn.textContent = "⏸";
+    }
+};
+
 //generates random co-ordinates within the canvas in order to display the apple
 function createFood(){
     function randomFood(min , max){

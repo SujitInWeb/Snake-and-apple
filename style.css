@@ -107,7 +107,10 @@ html,body{
     background-color: #29903B;
     position: absolute;
     border: 5px solid #3D444D;
-    padding: 6px;
+    text-align: center;
+    font-size: 20px;
+    color: #F0F6FC;
+    padding-bottom: 15px;
     top: 10px;
     height: 35px;
     width: 35px;
