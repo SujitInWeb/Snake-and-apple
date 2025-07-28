@@ -19,7 +19,6 @@ const snakeColor= "lightgreen";
 const foodColor = "red";
 const boardBackground = "#151B23"; 
 
-
 //setting the unit size of the snake and apple
 const unitSize = 10;
 
