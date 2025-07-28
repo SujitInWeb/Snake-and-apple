@@ -4,6 +4,8 @@ const ctx = ground.getContext('2d');
 const scorecard = document.querySelector('.score');
 const ResetBtn = document.querySelector('#Reset');
 const pauseBtn = document.querySelector('#pause');
+const pauseIcon = document.getElementById("pauseIcon");
+const resumeIcon = document.getElementById("resumeIcon")
 
 
 //here clientWidth means that to get the height and width of the canvas from css styling
@@ -46,6 +48,7 @@ window.addEventListener("keydown",changeDirection);
 ResetBtn.addEventListener("click",resetGame);
 pauseBtn.addEventListener("click", function(){
     paused = !paused;
+    toggleIcon();
 })
 
 gameStart();
@@ -56,7 +59,7 @@ function gameStart(){
     scorecard.textContent = score;
     createFood();
     drawfood();
-    updatePauseBtn();
+    toggleIcon();
     nextTick();
 };
 function nextTick(){
@@ -74,7 +77,6 @@ function nextTick(){
     else if(paused){
         setTimeout(nextTick , 75);
         displayPauseMessage();
-        updatePauseBtn();
     }
     else{
         displayGameOver();
@@ -100,11 +102,13 @@ function displayPauseMessage(){
     ctx.fillText("Click pause button to resume" , groundWidth /2, groundHeight/2 + 10);
 
 }
-function updatePauseBtn(){
+function toggleIcon(){
     if(paused){
-        pauseBtn.textContent ="▶";
+        pauseIcon.style.display= 'none';
+        resumeIcon.style.display ='block';
     } else{
-        pauseBtn.textContent = "⏸";
+        pauseIcon.style.display= 'block';
+        resumeIcon.style.display ='none';
     }
 };
 

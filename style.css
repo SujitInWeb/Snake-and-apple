@@ -76,6 +76,8 @@ html,body{
     justify-content: center;
     align-items: center;
     margin-right: 50px;
+    background-color: #151B23;
+    border: 1px solid #3D444D;
     width: 92%;
     height: 85%;
     font-size: 1em;
@@ -116,4 +118,8 @@ html,body{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+#pause img{
+    height: 25px;
+    width: 35px;
 }
