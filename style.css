@@ -70,10 +70,14 @@ html,body{
     background-color: #151B23;
     border: 1px solid #3D444D;
 }
+.score-card h3{
+    text-align: center;
+    color: #F0F6FC;
+}
 .score-card{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-right: 50px;
     background-color: #151B23;
@@ -122,4 +126,28 @@ html,body{
 #pause img{
     height: 25px;
     width: 35px;
+}
+.score-content h1{
+    font-size: 2rem;
+    padding-bottom: 50px;
+}
+.score-content p{
+    font-size: 1rem;
+}
+.score-content{
+    text-align: center;
+    width: 100%;
+    color: #F0F6FC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.your-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
 }
