@@ -234,3 +234,6 @@ function resetGame(){
     ];
     gameStart();
 };
+function updateLeaderBoardDisplay(){
+    const profiles= document.querySelectorAll('.profile');
+}
