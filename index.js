@@ -221,6 +221,9 @@ function displayGameOver(){
 };
 function resetGame(){
 //resets the game to its initial stage, check above ,the values are same
+    if(score > 0){
+        updateTopScores(score);
+    }
     paused = false;
     score=0;
     xVelocity = unitSize;
@@ -234,6 +237,25 @@ function resetGame(){
     ];
     gameStart();
 };
+let topScores = JSON.parse(sessionStorage.getItem('snakeTopScore')) ||[0,0,0];
+function updateTopScores(newScore){
+    topScores.push(newScore)
+    topScores.sort((a,b) => b-a)
+    topScores = topScores.slice(0,3);
+    sessionStorage.setItem('snakeTopScores',JSON.stringify(topScores));
+
+    updateLeaderBoardDisplay();
+}
 function updateLeaderBoardDisplay(){
     const profiles= document.querySelectorAll('.profile');
+
+    profiles.forEach((profile,index)=>{
+        const scoreElement = profile.querySelector('p:last-child strong');
+        if(scoreElement){
+            scoreElement.textContent = `# ${topScores[index]}`;
+        }
+    });
 }
+window.addEventListener('load' ,()=> {
+    updateLeaderBoardDisplay();
+});
