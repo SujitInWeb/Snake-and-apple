@@ -59,15 +59,19 @@
 
 ## ✨ Features
 
-| Feature | Description |
-|---------|-------------|
-| 🎮 **Smooth Gameplay** | 75ms refresh rate for fluid movement |
-| 📊 **Score Tracking** | Real-time score display and updates |
-| 📱 **Responsive Design** | Adapts to different screen sizes |
-| 💀 **Game Over Screen** | Elegant display with custom MV Boli font |
-| 🔄 **Reset Function** | Restart the game anytime with one click |
-| 💥 **Collision Detection** | Smart detection for walls and self-collision |
-| 🎲 **Random Food Generation** | Food appears at random grid positions |
+<div align="center">
+
+   | Feature | Description |
+   |---------|-------------|
+   | 🎮 **Smooth Gameplay** | 75ms refresh rate for fluid movement |
+   | 📊 **Score Tracking** | Real-time score display and updates |
+   | 📱 **Responsive Design** | Adapts to different screen sizes |
+   | 💀 **Game Over Screen** | Elegant display with custom MV Boli font |
+   | 🔄 **Reset Function** | Restart the game anytime with one click |
+   | 💥 **Collision Detection** | Smart detection for walls and self-collision |
+   | 🎲 **Random Food Generation** | Food appears at random grid positions |
+
+</div>
 
 ---
 
@@ -89,13 +93,13 @@
 
 <div align="center">
 
-| Key | Action | Description |
-|-----|--------|-------------|
-| ⬅️ **Left Arrow** | Move Left | Turn snake left |
-| ➡️ **Right Arrow** | Move Right | Turn snake right |
-| ⬆️ **Up Arrow** | Move Up | Turn snake up |
-| ⬇️ **Down Arrow** | Move Down | Turn snake down |
-| 🔄 **Reset Button** | Restart Game | Reset to initial state |
+   | Key | Action | Description |
+   |-----|--------|-------------|
+   | ⬅️ **Left Arrow** | Move Left | Turn snake left |
+   | ➡️ **Right Arrow** | Move Right | Turn snake right |
+   | ⬆️ **Up Arrow** | Move Up | Turn snake up |
+   | ⬇️ **Down Arrow** | Move Down | Turn snake down |
+   | 🔄 **Reset Button** | Restart Game | Reset to initial state |
 
 </div>
 
