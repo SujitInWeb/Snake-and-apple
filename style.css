@@ -16,6 +16,12 @@ html,body{
     height: 100%;
     
 }
+@media (max-width :786px){
+    .container{
+        display: none;
+        background-color: #010409;
+    }
+}
 @media (max-width :425px){
     .container{
         display: flex;
